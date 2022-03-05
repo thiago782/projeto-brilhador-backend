@@ -1,5 +1,15 @@
 # projeto-brilhador-backend
 
+<p> </p>
+
+<h3> Inicializando o projeto: (Assumindo que tenha docker instalado)</h3>
+
+```
+ docker-compose up
+```
+Nota: Até o momento não existem migrations/seeds no projeto, então o banco deve ser criado manualmente dentro da instância do Postgres
+
+
 <h2>Grupos: </h2>
   
   <h3> Relacionamento com o cliente</h3>
