@@ -1,5 +1,6 @@
 package com.brilhador.project.controllers;
 
+import com.brilhador.project.configuration.messaging.QueueSender;
 import com.brilhador.project.models.base.User;
 import com.brilhador.project.models.dto.AuthCredentials;
 import com.brilhador.project.models.dto.AuthTokens;

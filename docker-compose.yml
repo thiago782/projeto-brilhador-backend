@@ -15,7 +15,6 @@ services:
     command: ./mvnw spring-boot:run -X
     networks:
       - brilhador
-  
   postgres:
     container_name: postgresql
     image: postgres
@@ -23,6 +22,19 @@ services:
       POSTGRES_PASSWORD: "postgres"
     ports:
       - "5432:5432"
+    volumes:
+      - .:/app
+    working_dir: /app
+    networks:
+      - brilhador
+  rabbitmq:
+    container_name: rabbitmq-server
+    image: rabbitmq:3.9-management
+    environment:
+      RABBITMQ_CONFIG_FILE: ./rabbitmq.conf
+    ports:
+      - "5673:5673"
+      - "15672:15672"
     volumes:
       - .:/app
     working_dir: /app
