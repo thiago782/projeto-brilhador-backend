@@ -7,6 +7,7 @@ import com.brilhador.project.models.base.User;
 
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -21,17 +22,17 @@ public class JwtTokenUtil {
 
     public String generateToken(User user) {
         return Jwts.builder()
-                .setSubject(format("%s", user.toString()))
+                .setSubject(format("%s,%s", user.getEmail(), user.getRole()))
                 .setIssuer(jwtIssuer)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 3600)) // 1 hour
+                .setExpiration(new Date(System.currentTimeMillis() + (3600 * 1000))) // 1 hour
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
 
     public String generateRefreshToken(User user) {
         return Jwts.builder()
-                .setSubject(format("%s", user.toString()))
+                .setSubject(format("%s,%s,%s,%s,%s", user.getEmail(), user.getName(), user.getId(), user.getRole(), user.getCpf()))
                 .setIssuer(jwtIssuer)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 3600 * 24 * 365)) // 1 year
@@ -39,15 +40,30 @@ public class JwtTokenUtil {
                 .compact();
     }
 
-    public User parseToken(String token) {
-        return new User();
+    public boolean validateToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
-    public boolean validateToken(String token) {
-        return true;
+    public Date getExpirationDate(String token) {
+        Claims claims = Jwts.parser()
+                .setSigningKey(jwtSecret)
+                .parseClaimsJws(token)
+                .getBody();
+
+        return claims.getExpiration();
     }
 
     public String getEmail(String token) {
-        return "";
+        Claims claims = Jwts.parser()
+        .setSigningKey(jwtSecret)
+        .parseClaimsJws(token)
+        .getBody();
+        claims.getSubject();
+        return claims.getSubject().split(",")[0];
     }
 }

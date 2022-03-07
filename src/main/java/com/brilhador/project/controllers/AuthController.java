@@ -39,7 +39,6 @@ public class AuthController {
             return ResponseEntity.ok().body(tokens);
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             return ResponseEntity.badRequest().build();
         } 
     }
