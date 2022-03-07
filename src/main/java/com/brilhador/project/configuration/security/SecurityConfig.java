@@ -2,6 +2,7 @@ package com.brilhador.project.configuration.security;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -19,6 +20,7 @@ import org.springframework.web.filter.CorsFilter;
 
 import javax.servlet.http.HttpServletResponse;
 
+import com.brilhador.project.models.base.Role;
 import com.brilhador.project.models.exceptions.NotFound;
 import com.brilhador.project.repositories.UserRepository;
 
@@ -81,15 +83,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/auth/**").permitAll()
                 .antMatchers(format("%s/**", restApiDocPath)).permitAll()
                 .antMatchers(format("%s/**", swaggerPath)).permitAll()
-                .antMatchers("/users/**").hasAnyAuthority("ADMIN");
-                
-                
+                // Example of a protected controller
+                .antMatchers("/users/**").hasAnyAuthority(Role.ADMIN.name())
+                // Example of a protected endpoint using roles, determined by the request type
+                .antMatchers(HttpMethod.POST, "/users/**").hasAnyAuthority(Role.ADMIN.name());
 
-        // Add JWT token filter
         http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
-    // Used by spring security if CORS is enabled.
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
