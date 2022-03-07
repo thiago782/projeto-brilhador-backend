@@ -24,7 +24,7 @@ public class AuthService {
     public AuthTokens generateTokens(User user){
         String token = jwtTokenUtil.generateToken(user);
         String refreshToken = jwtTokenUtil.generateRefreshToken(user);
-        return new AuthTokens(user, token, refreshToken);
+        return new AuthTokens(user.toUserResponse(), token, refreshToken);
     }
 
     public User signUp(User user) {

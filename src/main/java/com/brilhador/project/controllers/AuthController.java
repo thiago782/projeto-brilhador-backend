@@ -1,9 +1,8 @@
 package com.brilhador.project.controllers;
-
-import com.brilhador.project.configuration.messaging.QueueSender;
 import com.brilhador.project.models.base.User;
 import com.brilhador.project.models.dto.AuthCredentials;
 import com.brilhador.project.models.dto.AuthTokens;
+import com.brilhador.project.models.dto.UserResponse;
 import com.brilhador.project.services.AuthService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +45,8 @@ public class AuthController {
     }
 
     @PostMapping("/sign-up")
-    ResponseEntity<User> signUp(User user) {
-        return ResponseEntity.ok().body(authService.signUp(user));
+    ResponseEntity<UserResponse> signUp(User user) {
+        UserResponse response = authService.signUp(user).toUserResponse();
+        return ResponseEntity.ok().body(response);
     } 
 }

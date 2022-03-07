@@ -2,6 +2,7 @@ package com.brilhador.project.configuration.security;
 
 
 import java.util.Date;
+
 import com.brilhador.project.models.base.User;
 
 import org.springframework.stereotype.Component;
