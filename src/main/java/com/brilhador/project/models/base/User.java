@@ -41,7 +41,7 @@ public class User implements UserDetails {
     private Role role;
 
     public User() {
-        this.role = Role.ROLE_USER;
+        this.role = Role.USER;
     }
     public User(UUID id, String name, String email, String password, String cpf, String phone) {
         this.id = id;
@@ -50,11 +50,11 @@ public class User implements UserDetails {
         this.password = password;
         this.cpf = cpf;
         this.phone = phone;
-        this.role = Role.ROLE_USER;
+        this.role = Role.USER;
     }
 
     public User setAsAdmin() {
-        this.role = Role.ROLE_ADMIN;
+        this.role = Role.USER;
         return this;
     }
 
