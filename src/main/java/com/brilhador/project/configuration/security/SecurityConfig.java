@@ -78,13 +78,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and();
 
         http.authorizeRequests()
-                // Swagger endpoints must be publicly accessible
                 .antMatchers("/auth/**").permitAll()
                 .antMatchers(format("%s/**", restApiDocPath)).permitAll()
                 .antMatchers(format("%s/**", swaggerPath)).permitAll()
-                // Our public endpoints
-                // Our private endpoints
-                .anyRequest().authenticated();
+                .antMatchers("/users/**").hasAnyAuthority("ADMIN");
+                
+                
 
         // Add JWT token filter
         http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);

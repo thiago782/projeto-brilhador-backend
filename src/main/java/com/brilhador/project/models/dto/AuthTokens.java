@@ -1,23 +1,21 @@
 package com.brilhador.project.models.dto;
 
-import com.brilhador.project.models.base.User;
-
 public class AuthTokens {
-    User user;
+    UserResponse user;
     String token;
     String refreshToken;
 
-    public AuthTokens(User user, String token, String refreshToken) {
+    public AuthTokens(UserResponse user, String token, String refreshToken) {
         this.user = user;
         this.token = token;
         this.refreshToken = refreshToken;
     }
 
-    public User getUser() {
+    public UserResponse getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserResponse user) {
         this.user = user;
     }
 

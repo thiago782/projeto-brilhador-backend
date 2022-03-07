@@ -12,8 +12,10 @@
 /app/src/main/java/com/brilhador/project/configuration/security/SecurityConfig.java
 /app/src/main/java/com/brilhador/project/configuration/SwaggerConfig.java
 /app/src/main/java/com/brilhador/project/configuration/security/JwtTokenFilter.java
+/app/src/main/java/com/brilhador/project/models/dto/UserResponse.java
 /app/src/main/java/com/brilhador/project/services/UserService.java
 /app/src/main/java/com/brilhador/project/configuration/messaging/QueueSender.java
+/app/src/main/java/com/brilhador/project/models/base/Role.java
 /app/src/main/java/com/brilhador/project/models/dto/Page.java
 /app/src/main/java/com/brilhador/project/configuration/security/JwtTokenUtil.java
 /app/src/main/java/com/brilhador/project/controllers/AuthController.java

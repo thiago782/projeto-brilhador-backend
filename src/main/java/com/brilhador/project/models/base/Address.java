@@ -1,8 +1,13 @@
 package com.brilhador.project.models.base;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "addresses")
 public class Address {
     
     @Id
@@ -16,6 +21,9 @@ public class Address {
     private String city;
     private String state;
     private String country;
+
+    @OneToOne(mappedBy = "address")
+    private User user;
 
     public Address(String id, String street, String number, String complement, String zipCode, String city,
             String state, String country) {

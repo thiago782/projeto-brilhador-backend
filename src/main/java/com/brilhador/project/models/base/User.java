@@ -1,16 +1,20 @@
 package com.brilhador.project.models.base;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+import com.brilhador.project.models.dto.UserResponse;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
@@ -30,7 +34,14 @@ public class User implements UserDetails {
     private String cpf;
     private String phone;
 
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    private Role role;
+
     public User() {
+        this.role = Role.ROLE_USER;
     }
     public User(UUID id, String name, String email, String password, String cpf, String phone) {
         this.id = id;
@@ -39,12 +50,27 @@ public class User implements UserDetails {
         this.password = password;
         this.cpf = cpf;
         this.phone = phone;
+        this.role = Role.ROLE_USER;
+    }
+
+    public User setAsAdmin() {
+        this.role = Role.ROLE_ADMIN;
+        return this;
+    }
+
+    public Role getRole() {
+        return this.role;
+    }
+
+    public UserResponse toUserResponse() {
+        return new UserResponse(this.id, this.name, this.email, this.cpf, this.phone, this.address, this.role);
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        return null;
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+        grantedAuthorities.add(new SimpleGrantedAuthority(this.role.name()));
+        return grantedAuthorities;
     }
     
     @Override
