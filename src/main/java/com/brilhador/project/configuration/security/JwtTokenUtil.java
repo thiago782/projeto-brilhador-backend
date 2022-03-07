@@ -35,7 +35,7 @@ public class JwtTokenUtil {
                 .setSubject(format("%s,%s,%s,%s,%s", user.getEmail(), user.getName(), user.getId(), user.getRole(), user.getCpf()))
                 .setIssuer(jwtIssuer)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 3600 * 24 * 365)) // 1 year
+                .setExpiration(new Date(System.currentTimeMillis() + (3600 * 1000) * 24 * 365)) // 1 year
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
@@ -60,10 +60,9 @@ public class JwtTokenUtil {
 
     public String getEmail(String token) {
         Claims claims = Jwts.parser()
-        .setSigningKey(jwtSecret)
-        .parseClaimsJws(token)
-        .getBody();
-        claims.getSubject();
+            .setSigningKey(jwtSecret)
+            .parseClaimsJws(token)
+            .getBody();
         return claims.getSubject().split(",")[0];
     }
 }
