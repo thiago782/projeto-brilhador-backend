@@ -10,6 +10,33 @@
 ```
 Nota: Até o momento não existem migrations/seeds no projeto, então o banco deve ser criado manualmente dentro da instância do Postgres
 
+Em um terminal dentro do diretório do projeto, execute:
+
+```
+ docker-compose exec -it postgresql /bin/sh
+```
+
+Então, já dentro do container execute 
+```
+ psql -U postgres
+```
+
+para acessar o postgres.
+
+Então crie o banco:
+
+```
+create database brilhador;
+```
+
+e reinicie o docker compose
+
+```
+docker-compose down
+
+docker-compose up
+```
+
 
 <h2>Grupos: </h2>
   
