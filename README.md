@@ -41,7 +41,7 @@ docker-compose up
   
   <h3> Relacionamento com o cliente</h3>
    <h5>Vinícius Lojhan Martinez Hernandes - 12855073</h5>
-   <h5>Jorge de Oliveira Neto - ???</h5>
+   <h5>Jorge de Oliveira Neto - 12969371</h5>
    <h5>Lucas Raulin Lunik - ???</h5>
    <h5>Gabriel Marchiorato Oliveira - ???</h5>
    <h5>Douglas Gorges - ???</h5>
