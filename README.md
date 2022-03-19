@@ -44,7 +44,7 @@ docker-compose up
    <h5>Jorge de Oliveira Neto - 12969371</h5>
    <h5>Lucas Raulin Lunik - ???</h5>
    <h5>Gabriel Marchiorato Oliveira - ???</h5>
-   <h5>Douglas Gorges - ???</h5>
+   <h5>Douglas Gorges - 12851469</h5>
    <h5>Igor Mateus Rodrigues de Oliveira - ???</h5>
   
   <h3> Gestão da cadeia de suprimentos</h3>
