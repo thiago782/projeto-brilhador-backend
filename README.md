@@ -75,10 +75,10 @@ docker-compose up
    <h5> Aluno - RGM </h5>
   
   <h3> Compras e vendas</h3>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
+   <h5> Aluno - RGM </h5> Lucas Rodrigues Leite - 8813279432
+   <h5> Aluno - RGM </h5> Vinícius Kruchelski Gugelmin - 8813365614
+   <h5> Aluno - RGM </h5> Garbriel Fernando Cazeque Zanin - 8813372831
+   <h5> Aluno - RGM </h5> Carlos Roberto Pereira Neres Filho - 8813207156
    <h5> Aluno - RGM </h5>
   
   <h3> Sistemas estratégicos</h3>
