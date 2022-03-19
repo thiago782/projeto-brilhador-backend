@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Authentication")
-@RestController @RequestMapping(path = "auth")
+@RestController @RequestMapping(path = "")
 public class AuthController {
 
     @Autowired
