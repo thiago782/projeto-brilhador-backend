@@ -7,45 +7,16 @@
 ```
  docker-compose up
 ```
-Nota: Até o momento não existem migrations/seeds no projeto, então o banco deve ser criado manualmente dentro da instância do Postgres
-
-Em um terminal dentro do diretório do projeto, execute:
-
-```
- docker-compose exec -it postgresql /bin/sh
-```
-
-Então, já dentro do container execute 
-```
- psql -U postgres
-```
-
-para acessar o postgres.
-
-Então crie o banco:
-
-```
-create database brilhador;
-```
-
-e reinicie o docker compose
-
-```
-docker-compose down
-
-docker-compose up
-```
-
 
 <h2>Grupos: </h2>
   
   <h3> Relacionamento com o cliente</h3>
    <h5>Vinícius Lojhan Martinez Hernandes - 12855073</h5>
    <h5>Jorge de Oliveira Neto - 12969371</h5>
-   <h5>Lucas Raulin Lunik - ???</h5>
-   <h5>Gabriel Marchiorato Oliveira - ???</h5>
+   <h5>Lucas Raulin Lunik - 12857815<h5>
+   <h5>Gabriel Marchiorato Oliveira - 13022474</h5>
    <h5>Douglas Gorges - 12851469</h5>
-   <h5>Igor Mateus Rodrigues de Oliveira - ???</h5>
+   <h5>Igor Mateus Rodrigues de Oliveira - 12861324</h5>
   
   <h3> Gestão da cadeia de suprimentos</h3>
    <h5>Antonio Eduardo Oliveira - ???</h5>
@@ -83,7 +54,10 @@ docker-compose up
   
   <h3> Sistemas estratégicos</h3>
    <h5>Rafaela - ???</h5>
+<<<<<<< HEAD
+=======
    <h5> Aluno - RGM </h5>
+>>>>>>> development
    <h5> Aluno - RGM </h5>
    <h5> Aluno - RGM </h5>
    <h5> Aluno - RGM </h5>
