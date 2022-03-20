@@ -10,7 +10,6 @@ import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import reactor.core.publisher.Mono;
 
 @SpringBootApplication
@@ -26,9 +25,11 @@ public class GatewayApplication {
 		return builder.routes()
 				.route("AUTHENTICATION", p -> p
 					.path("/auth/**")
-					.filters(r -> r.stripPrefix(1))
-					.uri("http://authentication-spring-boot:8080/")
-			).build();
+					.filters(r -> r
+						.stripPrefix(1)
+						.circuitBreaker(configConsumer -> configConsumer.setFallbackUri("forward:/fallback")))
+					.uri("http://authentication-service-brilhador")
+				).build();
 	}
 
 	@RequestMapping("/fallback")
