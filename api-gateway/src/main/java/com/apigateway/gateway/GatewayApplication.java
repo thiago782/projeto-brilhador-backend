@@ -23,15 +23,11 @@ public class GatewayApplication {
 
 	@Bean
 	public RouteLocator myRoutes(RouteLocatorBuilder builder, UriConfiguration uriConfiguration) {
-		String httpUri = uriConfiguration.getHttpbin();
-
 		return builder.routes()
-			.route("AUTHENTICATION", p -> p
-				
-				.path("/auth/**")
-				.filters(r -> r.stripPrefix(1))
-				.uri("http://authentication-spring-boot:8080/")
-				
+				.route("AUTHENTICATION", p -> p
+					.path("/auth/**")
+					.filters(r -> r.stripPrefix(1))
+					.uri("http://authentication-spring-boot:8080/")
 			).build();
 	}
 
