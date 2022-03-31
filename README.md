@@ -54,10 +54,7 @@
   
   <h3> Sistemas estratégicos</h3>
    <h5>Rafaela - ???</h5>
-<<<<<<< HEAD
-=======
    <h5> Aluno - RGM </h5>
->>>>>>> development
    <h5> Aluno - RGM </h5>
    <h5> Aluno - RGM </h5>
    <h5> Aluno - RGM </h5>
