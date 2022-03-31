@@ -35,8 +35,8 @@
   
   <h3>  Recursos humanos</h3>
    <h5>Pedro Kappes - ???</h5>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
+   <h5>Gustavo Henrique Fogaça - 11408367 </h5>
+   <h5> Thiago De Lima - 11396512 </h5>
    <h5> Aluno - RGM </h5>
    <h5> Aluno - RGM </h5>
   
