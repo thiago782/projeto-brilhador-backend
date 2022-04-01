@@ -16,7 +16,7 @@
    <h5>Jorge de Oliveira Neto - 12969371</h5>
    <h5>Lucas Raulin Lunik - 12857815<h5>
    <h5>Gabriel Marchiorato Oliveira - 13022474</h5>
-   <h5>Douglas Gorges - 12851469</h5>
+   <h5><s>Douglas Gorges - 12851469 </s> - transfered</h5>
    <h5>Igor Mateus Rodrigues de Oliveira - 12861324</h5>
   
   <h3> Gestão da cadeia de suprimentos</h3>
