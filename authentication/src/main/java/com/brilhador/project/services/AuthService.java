@@ -3,6 +3,9 @@ package com.brilhador.project.services;
 import com.brilhador.project.configuration.security.JwtTokenUtil;
 import com.brilhador.project.models.base.User;
 import com.brilhador.project.models.dto.AuthTokens;
+import com.brilhador.project.models.dto.TokenResponse;
+import com.brilhador.project.models.dto.UserResponse;
+import com.brilhador.project.models.dto.ValidationResponse;
 import com.brilhador.project.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +34,32 @@ public class AuthService {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
+    }
+
+    public ValidationResponse validateToken(String token) {
+        boolean valid = this.jwtTokenUtil.validateToken(token);
+        ValidationResponse response = new ValidationResponse(valid, null);
+        if (valid) {
+            String email = this.jwtTokenUtil.getEmail(token);
+            UserResponse user = this.userRepository
+                .findByEmail(email)
+                .get()
+                .toUserResponse();
+
+            if (user != null) response.setUser(user);
+            else response.setValid(valid);
+        }
+        return response;
+    }
+
+    public TokenResponse refreshToken(String token) {
+        boolean valid = this.jwtTokenUtil.validateToken(token);
+
+        if (valid) {
+            String email = this.jwtTokenUtil.getEmail(token);
+            User user = this.userRepository.findByEmail(email).get();
+            return new TokenResponse(this.generateTokens(user).getToken());
+        }
+        return new TokenResponse(null);
     }
 }
