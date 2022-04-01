@@ -2,7 +2,8 @@ package com.brilhador.project.controllers;
 import com.brilhador.project.models.base.User;
 import com.brilhador.project.models.dto.AuthCredentials;
 import com.brilhador.project.models.dto.AuthTokens;
-import com.brilhador.project.models.dto.TokenInput;
+import com.brilhador.project.models.dto.TokenRequest;
+import com.brilhador.project.models.dto.TokenResponse;
 import com.brilhador.project.models.dto.UserResponse;
 import com.brilhador.project.models.dto.ValidationResponse;
 import com.brilhador.project.services.AuthService;
@@ -52,7 +53,7 @@ public class AuthController {
     } 
 
     @PostMapping("/validate-token")
-    ResponseEntity<ValidationResponse> validateToken(TokenInput input) {
+    ResponseEntity<ValidationResponse> validateToken(TokenRequest input) {
         ResponseEntity<ValidationResponse> unauthorized = ResponseEntity.status(401).build();
         try {
             String token = input.getToken();
@@ -61,6 +62,27 @@ public class AuthController {
             
             ValidationResponse response = authService.validateToken(token);
             if (response.isValid()) return ResponseEntity.ok().body(response);
+
+            else return unauthorized;
+        } catch (Exception e) {
+            return unauthorized;
+        }
+    }
+
+    @PostMapping("/refresh-token")
+    ResponseEntity<TokenResponse> refreshToken(TokenRequest input) {
+        ResponseEntity<TokenResponse> unauthorized = ResponseEntity.status(401).build();
+        try {
+            String token = input.getToken();
+
+            if (token.isBlank() || token.isEmpty()) return unauthorized;
+            
+            TokenResponse response = authService.refreshToken(token);
+
+            if (
+                !response.getToken().isEmpty() 
+                && !response.getToken().isBlank()
+            ) return ResponseEntity.ok().body(response);
 
             else return unauthorized;
         } catch (Exception e) {

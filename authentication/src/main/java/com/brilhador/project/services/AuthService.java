@@ -3,6 +3,7 @@ package com.brilhador.project.services;
 import com.brilhador.project.configuration.security.JwtTokenUtil;
 import com.brilhador.project.models.base.User;
 import com.brilhador.project.models.dto.AuthTokens;
+import com.brilhador.project.models.dto.TokenResponse;
 import com.brilhador.project.models.dto.UserResponse;
 import com.brilhador.project.models.dto.ValidationResponse;
 import com.brilhador.project.repositories.UserRepository;
@@ -49,5 +50,16 @@ public class AuthService {
             else response.setValid(valid);
         }
         return response;
+    }
+
+    public TokenResponse refreshToken(String token) {
+        boolean valid = this.jwtTokenUtil.validateToken(token);
+
+        if (valid) {
+            String email = this.jwtTokenUtil.getEmail(token);
+            User user = this.userRepository.findByEmail(email).get();
+            return new TokenResponse(this.generateTokens(user).getToken());
+        }
+        return new TokenResponse(null);
     }
 }

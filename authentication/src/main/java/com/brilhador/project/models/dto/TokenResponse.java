@@ -1,9 +1,9 @@
 package com.brilhador.project.models.dto;
 
-public class TokenInput {
+public class TokenResponse {
     String token;
 
-    public TokenInput(String token) {
+    public TokenResponse(String token) {
         this.token = token;
     }
 
