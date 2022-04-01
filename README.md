@@ -20,10 +20,10 @@
    <h5>Igor Mateus Rodrigues de Oliveira - 12861324</h5>
   
   <h3> Gestão da cadeia de suprimentos</h3>
-   <h5>Antonio Eduardo Oliveira - ???</h5>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
+   <h5>Antonio Eduardo Oliveira - 12777366</h5>
+   <h5> Vinícius Lisboa - 13197347 </h5>
+   <h5> Raphael Marangoni - 13178130 </h5>
+   <h5> Igor Cristian - 13188062 </h5>
    <h5> Aluno - RGM </h5>
   
   <h3> Estoque e produção</h3>
