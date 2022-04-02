@@ -34,8 +34,8 @@
   
   <h3>  Recursos humanos</h3>
    <h5>Pedro Kappes - ???</h5>
-   <h5> Aluno - RGM </h5>
-   <h5> Aluno - RGM </h5>
+   <h5>Thiago de Lima </h5>
+   <h5>Gustavo Fogaça </h5>
    <h5> Aluno - RGM </h5>
    <h5> Aluno - RGM </h5>
   
