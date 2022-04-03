@@ -1,4 +1,4 @@
-package com.clientRelationship.project.models.base;
+package com.clientRelationship.clientRelationshipProject.models.base;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

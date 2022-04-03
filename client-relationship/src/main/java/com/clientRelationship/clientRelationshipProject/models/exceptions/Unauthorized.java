@@ -1,4 +1,4 @@
-package com.clientRelationship.project.models.exceptions;
+package com.clientRelationship.clientRelationshipProject.models.exceptions;
 
 public class Unauthorized extends Exception { 
     public Unauthorized(String message){

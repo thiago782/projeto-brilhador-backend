@@ -1,4 +1,4 @@
-package com.clientRelationship.project.configuration.messaging;
+package com.clientRelationship.clientRelationshipProject.configuration.messaging;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.messaging.handler.annotation.Payload;

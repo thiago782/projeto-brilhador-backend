@@ -1,11 +1,11 @@
-package com.clientRelationship.project.configuration.security;
+package com.clientRelationship.clientRelationshipProject.configuration.security;
 
 
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.clientRelationship.project.models.dto.ValidationResponse;
+import com.clientRelationship.clientRelationshipProject.models.dto.ValidationResponse;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;

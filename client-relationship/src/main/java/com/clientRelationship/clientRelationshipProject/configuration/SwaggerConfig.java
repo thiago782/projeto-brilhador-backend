@@ -1,4 +1,4 @@
-package com.clientRelationship.project.configuration;
+package com.clientRelationship.clientRelationshipProject.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -32,7 +32,7 @@ public class SwaggerConfig {
 
         List<Server> servers = new ArrayList<>();
 
-        servers.add(new Server().url("http://localhost:4000/auth"));
+        servers.add(new Server().url("http://localhost:4000/client-relationship"));
         return new OpenAPI()
                 .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
                 .components(

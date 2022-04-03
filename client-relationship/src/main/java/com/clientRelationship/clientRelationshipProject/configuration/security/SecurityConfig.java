@@ -1,4 +1,4 @@
-package com.clientRelationship.project.configuration.security;
+package com.clientRelationship.clientRelationshipProject.configuration.security;
 
 import javax.servlet.http.HttpServletResponse;
 
