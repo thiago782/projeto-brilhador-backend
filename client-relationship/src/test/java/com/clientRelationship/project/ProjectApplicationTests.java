@@ -1,4 +1,4 @@
-package com.clientRelationship.clientRelationshipProject;
+package com.clientRelationship.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
