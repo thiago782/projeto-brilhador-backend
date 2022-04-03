@@ -1,9 +1,9 @@
-package com.clientRelationship.project.models.dto;
+package com.clientRelationship.clientRelationshipProject.models.dto;
 
 import java.io.Serializable;
 import java.util.UUID;
-import com.clientRelationship.project.models.base.Address;
-import com.clientRelationship.project.models.base.Role;
+import com.clientRelationship.clientRelationshipProject.models.base.Address;
+import com.clientRelationship.clientRelationshipProject.models.base.Role;
 
 public class UserResponse implements Serializable {
     private UUID id;

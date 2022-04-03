@@ -1,4 +1,4 @@
-package com.clientRelationship.project.configuration;
+package com.clientRelationship.clientRelationshipProject.configuration;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

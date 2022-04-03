@@ -1,5 +1,5 @@
-package com.clientRelationship.project.controllers;
-import com.clientRelationship.project.services.ClientRelationshipService;
+package com.clientRelationship.clientRelationshipProject.controllers;
+import com.clientRelationship.clientRelationshipProject.services.ClientRelationshipService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

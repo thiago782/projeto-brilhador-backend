@@ -1,6 +1,6 @@
-package com.clientRelationship.project.models.dto;
+package com.clientRelationship.clientRelationshipProject.models.dto;
 
-import com.clientRelationship.project.models.dto.UserResponse;
+import com.clientRelationship.clientRelationshipProject.models.dto.UserResponse;
 
 public class ValidationResponse {
     boolean valid;

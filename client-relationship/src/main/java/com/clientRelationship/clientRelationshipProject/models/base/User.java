@@ -1,4 +1,4 @@
-package com.clientRelationship.project.models.base;
+package com.clientRelationship.clientRelationshipProject.models.base;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import com.clientRelationship.project.models.dto.UserResponse;
+import com.clientRelationship.clientRelationshipProject.models.dto.UserResponse;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

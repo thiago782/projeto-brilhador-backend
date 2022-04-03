@@ -1,4 +1,4 @@
-package com.clientRelationship.project.configuration.messaging;
+package com.clientRelationship.clientRelationshipProject.configuration.messaging;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;

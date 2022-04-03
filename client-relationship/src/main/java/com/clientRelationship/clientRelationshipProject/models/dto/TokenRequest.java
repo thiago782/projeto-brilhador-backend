@@ -1,4 +1,4 @@
-package com.clientRelationship.project.models.dto;
+package com.clientRelationship.clientRelationshipProject.models.dto;
 
 public class TokenRequest {
     String token;
