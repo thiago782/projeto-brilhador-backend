@@ -35,7 +35,7 @@ public class GatewayApplication {
 				.filters(r -> r
 					.stripPrefix(1)
 					.circuitBreaker(configConsumer -> configConsumer.setFallbackUri("forward:/fallback")))
-				.uri("http://client-relationship-brilhador")
+				.uri("http://client-relationship-service-brilhador")
 				)
 				.build();
 	}
