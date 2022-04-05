@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Client Relationship - change ticket status")
+@Tag(name = "Change ticket status")
 @RestController @RequestMapping(path = "change-ticket-status")
 public class ChangeTicketStatusController {
 

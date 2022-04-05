@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name = "Client Relationship - Get Ticket By Id")
+@Tag(name = "Get Ticket By Id")
 @RestController @RequestMapping(path = "ticket")
 public class GetTicketByIdController {
     
