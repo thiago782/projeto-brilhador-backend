@@ -11,7 +11,7 @@ import com.clientRelationship.clientRelationshipProject.services.ChangeTicketSta
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +25,7 @@ public class ChangeTicketStatusController {
     @Autowired
     ChangeTicketStatusService service;
 
-    @PostMapping(path = "/{ticketId}")
+    @PutMapping(path = "/{ticketId}")
     public ResponseEntity<Ticket> create(
         @RequestAttribute("user") UserResponse user,
         @PathVariable UUID ticketId,
