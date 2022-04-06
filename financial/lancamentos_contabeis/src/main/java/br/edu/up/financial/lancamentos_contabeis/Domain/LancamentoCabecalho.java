@@ -1,16 +1,22 @@
 package br.edu.up.financial.lancamentos_contabeis.Domain;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@Table(name = "CAB_LANCAMENTOS")
 public class LancamentoCabecalho {
 
 
@@ -32,6 +38,11 @@ public class LancamentoCabecalho {
     private String cliente;
     @Column(name = "STATUS")
     private String status;
+
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "ID_CAB_LANCAMENTOS")
+    private List<Lancamento> lancamentos;
 
     //constructors
     public LancamentoCabecalho(long id, Date dataLancamento, String tipoLancamento, String documento, String fornecedor,
