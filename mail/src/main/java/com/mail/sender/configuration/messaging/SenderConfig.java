@@ -1,4 +1,4 @@
-package com.clientRelationship.clientRelationshipProject.configuration.messaging;
+package com.mail.sender.configuration.messaging;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SenderConfig {
 
-    
     @Value("${queue.name.userTicket}")
     private String message;
 
@@ -16,10 +15,4 @@ public class SenderConfig {
     public Queue userTicketsQueue() {
         return new Queue(message, true);
     }
-
-    // @Bean(name = "anotherQueue")
-    // public Queue anotherQueue() {
-    //     return new Queue(message, true);
-    // }
-
 }

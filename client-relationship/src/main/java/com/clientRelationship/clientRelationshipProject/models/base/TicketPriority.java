@@ -1,7 +1,8 @@
 package com.clientRelationship.clientRelationshipProject.models.base;
 
-public enum Role {
-    USER, 
-    OPERATOR, 
-    ADMIN;
+public enum TicketPriority {
+   LOW,
+   MEDIUM,
+   HIGH,
+   URGENT;
 }

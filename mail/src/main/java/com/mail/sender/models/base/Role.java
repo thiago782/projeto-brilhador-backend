@@ -1,4 +1,4 @@
-package com.brilhador.authentication.models.base;
+package com.mail.sender.models.base;
 
 public enum Role {
     USER, 
