@@ -1,9 +1,10 @@
-package com.clientRelationship.clientRelationshipProject.models.dto;
+package com.mail.sender.models.dto;
 
 import java.io.Serializable;
 import java.util.UUID;
-import com.clientRelationship.clientRelationshipProject.models.base.Address;
-import com.clientRelationship.clientRelationshipProject.models.base.Role;
+
+import com.mail.sender.models.base.Role;
+
 
 public class UserResponse implements Serializable {
     private UUID id;
@@ -11,21 +12,19 @@ public class UserResponse implements Serializable {
     private String email;
     private String cpf;
     private String phone;
-    private Address address;
     private Role role;
 
     public UserResponse() {
         super();
     }
 
-    public UserResponse(UUID id, String name, String email, String cpf, String phone, Address address, Role role) {
+    public UserResponse(UUID id, String name, String email, String cpf, String phone, Role role) {
         super();
         this.id = id;
         this.name = name;
         this.email = email;
         this.cpf = cpf;
         this.phone = phone;
-        this.address = address;
         this.role = role;
     }
 
@@ -75,26 +74,5 @@ public class UserResponse implements Serializable {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public String toJSON() {
-        // creates a json string from the object data
-        String json = "{";
-        json += "\"id\":\"" + id + "\",";
-        json += "\"name\":\"" + name + "\",";
-        json += "\"email\":\"" + email + "\",";
-        json += "\"cpf\":\"" + cpf + "\",";
-        json += "\"phone\":\"" + phone + "\",";
-        json += "\"role\":\"" + role + "\"";
-        json += "}";
-        return json;
     }
 }
